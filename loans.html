@@ -1,0 +1,33 @@
+<h2>Loans</h2>
+
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Book</th>
+<th>Member</th>
+<th>Issue</th>
+<th>Due</th>
+<th>Return</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+{% for l in loans %}
+<tr>
+<td>{{l.loan_id}}</td>
+<td>{{l.title}}</td>
+<td>{{l.member}}</td>
+<td>{{l.issue_date}}</td>
+<td>{{l.due_date}}</td>
+<td>{{l.return_date}}</td>
+<td>{{l.status}}</td>
+
+<td>
+<a href="/return/{{l.loan_id}}">Return</a>
+<a href="/delete/{{l.loan_id}}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/issue">Issue New Book</a>

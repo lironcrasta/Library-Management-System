@@ -1,0 +1,23 @@
+<h2>Issue Book</h2>
+
+<form method="POST">
+
+<label>Book</label>
+<select name="book_id">
+{% for b in books %}
+<option value="{{b.book_id}}">{{b.title}}</option>
+{% endfor %}
+</select>
+
+<label>Member</label>
+<select name="member_id">
+{% for m in members %}
+<option value="{{m.member_id}}">
+{{m.first_name}} {{m.last_name}}
+</option>
+{% endfor %}
+</select>
+
+<button>Issue Book</button>
+
+</form>

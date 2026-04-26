@@ -1,0 +1,23 @@
+<h2>Members</h2>
+
+<table border="1">
+<tr>
+<th>ID</th><th>Name</th><th>Email</th>
+</tr>
+
+{% for m in members %}
+<tr>
+<td>{{m.member_id}}</td>
+<td>{{m.first_name}} {{m.last_name}}</td>
+<td>{{m.email}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Add Member</h3>
+<form method="POST" action="/add_member">
+<input name="first_name" placeholder="First Name">
+<input name="last_name" placeholder="Last Name">
+<input name="email" placeholder="Email">
+<button>Add</button>
+</form>
